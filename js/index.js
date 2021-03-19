@@ -40,7 +40,7 @@ function createForecast(f){
 
     const temp = document.createElement("div");
     temp.classList.add("temp");
-    temp.innerText = f.day.avgtemp_c;
+    temp.innerText = f.day.avgtemp_c+" C";
 
     const d = document.createElement("div");
     d.classList.add("date");
@@ -85,8 +85,8 @@ function setForecast(forecast){
 
 window.navigator.geolocation.getCurrentPosition((e)=>{
     const lat = e.coords.latitude,lon = e.coords.longitude;
-    const API_KEY = "YOUR API KEY"
-    const url = "http://api.weatherapi.com/v1/forecast.json?key="+API_KEY+"&q="+lat+","+lon+"&days=5&aqi=no&alerts=no";
+    const API_KEY = "21c4e9114fb448cc9cf105045211703"
+    const url = "https://api.weatherapi.com/v1/forecast.json?key="+API_KEY+"&q="+lat+","+lon+"&days=5&aqi=no&alerts=no";
     const x = new XMLHttpRequest();
     x.onreadystatechange = (e)=>{
         if(x.readyState===4&&x.status===200){
